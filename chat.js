@@ -2,7 +2,7 @@ const connectedUsers = require('./connectedUsers');
 
 const chat = (io) => {
     io.on('connection', socket => {
-        socket.on('connecting-user', username => {
+        socket.on('connecting-user', (username) => {
             connectedUsers[socket.id] = username;
             socket.broadcast.emit('user-connected', username);
         });
