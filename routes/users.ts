@@ -1,9 +1,9 @@
 const express = require('express');
-const connectedUsers = require('../connectedUsers');
+import connectedUsers from '../connectedUsers';
 const router = express.Router()
 
 router.get('/users/:id', (req, res) => {
-    if (Object.values(connectedUsers).map(username => username.toLocaleLowerCase()).includes(req.params.id.toLocaleLowerCase())) {
+    if (Object.values(connectedUsers).map((username:string) => username.toLocaleLowerCase()).includes(req.params.id.toLocaleLowerCase())) {
         res.status(400)
             .json({ msg: 'Username taken' });
     }

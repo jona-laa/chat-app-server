@@ -3,9 +3,9 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const cors = require('cors');
 var usersRoute = require('./routes/users');
-require('./chat.js')(io);
+require('./chat')(io);
 const morgan = require('./middleware/morgan');
-const logger = require('./middleware/logger');
+import logger from './middleware/logger';
 
 app.use(cors());
 app.use(morgan);

@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "outDir": "./dist",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "target": "es6"
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "index.ts",
+        "connectedUsers.ts",
+        "chat.ts",
+        "./middleware/*",
+        "./routes/*"
+    ]
+}
